@@ -20,6 +20,33 @@ class UI {
             document.getElementById('Sum').value = `${parseInt(num1) + parseInt(num2)}`
         }
     }
+    //Restar
+    restar(num1 , num2) {
+        //verificamos que el chechbox que elije la opcion suma este valido
+        const checkbox = document.getElementById('checkR').checked
+        if(checkbox == true) {
+            // si el checkbox esta valido en la opcion suma, realizara la suma
+            document.getElementById('Res').value = `${parseInt(num1) - parseInt(num2)}`
+        }
+    }
+    //Multiplicar
+    multiplicar(num1 , num2) {
+        //verificamos que el chechbox que elije la opcion suma este valido
+        const checkbox = document.getElementById('checkM').checked
+        if(checkbox == true) {
+            // si el checkbox esta valido en la opcion suma, realizara la suma
+            document.getElementById('Mul').value = `${parseInt(num1) * parseInt(num2)}`
+        }
+    }
+    //Dividir
+    dividir(num1 , num2) {
+        //verificamos que el chechbox que elije la opcion suma este valido
+        const checkbox = document.getElementById('checkD').checked
+        if(checkbox == true) {
+            // si el checkbox esta valido en la opcion suma, realizara la suma
+            document.getElementById('Div').value = `${parseInt(num1) / parseInt(num2)}`
+        }
+    }
 }
 
 document.getElementById('form-resolve').addEventListener('submit' , (e) => {
@@ -39,7 +66,12 @@ document.getElementById('form-resolve').addEventListener('submit' , (e) => {
     if(num1.length === 0 || num2.length === 0){
         alert('Ingrese numeros validos');
     } else {
+
+        //llamamos al metodo
         ui.sumar(num1 , num2)
+        ui.restar(num1 , num2)
+        ui.multiplicar(num1 , num2)
+        ui.dividir(num1 , num2)
     }
 
 })
